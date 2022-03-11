@@ -1,0 +1,1 @@
+scribble("[scale,3.0][fa_center][fa_middle][#FFFFFF][ThaleahFat]"+ text).draw(x,y + 32);
