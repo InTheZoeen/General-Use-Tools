@@ -3,5 +3,5 @@
 
 # Ignore .yy && .GLSL files for language statistics
 *.yy linguist-generated=true
-*.vsh linguist-generate=true
-*.fsh linguist-generate=true
+*.vsh linguist-generated=true
+*.fsh linguist-generated=true
