@@ -26,18 +26,18 @@ function scribble_glyph_set(_font, _character, _property, _value, _relative = fa
     
     var _font_data = global.__scribble_font_data[? _font];
     
-    var _grid = _font_data.glyph_data_grid;
-    var _map  = _font_data.glyphs_map;
+    var _grid = _font_data.__glyph_data_grid;
+    var _map  = _font_data.__glyphs_map;
     
     if ((_character == all) || (_character == "all"))
     {
         if (_relative)
         {
-            ds_grid_add_region(_grid, 0, _property, ds_grid_height(_grid)-1, _property, _value);
+            ds_grid_add_region(_grid, 0, _property, ds_grid_width(_grid)-1, _property, _value);
         }
         else
         {
-            ds_grid_set_region(_grid, 0, _property, ds_grid_height(_grid)-1, _property, _value);
+            ds_grid_set_region(_grid, 0, _property, ds_grid_width(_grid)-1, _property, _value);
         }
         
         //Space character separation and width should always be the same
@@ -53,8 +53,8 @@ function scribble_glyph_set(_font, _character, _property, _value, _relative = fa
     }
     else
     {
-        var _ord = ord(_character);
-        var _glyph_index = _map[? _ord];
+        var _unicode = ord(_character);
+        var _glyph_index = _map[? _unicode];
         
         if (_glyph_index == undefined)
         {
@@ -65,7 +65,7 @@ function scribble_glyph_set(_font, _character, _property, _value, _relative = fa
         var _new_value = _relative? (_grid[# _glyph_index, _property] + _value) : _value;
         _grid[# _glyph_index, _property] = _new_value;
         
-        if (_ord == 0x20) //Space character separation and width should always be the same
+        if (_unicode == 0x20) //Space character separation and width should always be the same
         {
             if (_property == SCRIBBLE_GLYPH.SEPARATION) _grid[# _glyph_index, SCRIBBLE_GLYPH.WIDTH     ] = _new_value;
             if (_property == SCRIBBLE_GLYPH.WIDTH     ) _grid[# _glyph_index, SCRIBBLE_GLYPH.SEPARATION] = _new_value;

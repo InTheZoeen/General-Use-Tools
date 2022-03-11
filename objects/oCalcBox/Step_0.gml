@@ -200,7 +200,6 @@ if position_meeting(mouse_x,mouse_y,id) {
 		}
 	
 		if (text = "QUIT") {
-			window_set_size(960,960);
 			room_goto(rTools);
 		}
 		if (text = "CLEAR") {

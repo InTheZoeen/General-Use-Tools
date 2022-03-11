@@ -1,17 +1,17 @@
 function __scribble_gen_1_model_limits_and_bezier_curves()
 {
-    var _element = global.__scribble_generator_state.element;
+    var _element = global.__scribble_generator_state.__element;
     
-    var _model_max_width = _element.wrap_max_width - (_element.padding_l + _element.padding_r);
+    var _model_max_width = _element.__wrap_max_width - (_element.__padding_l + _element.__padding_r);
     if (_model_max_width < 0) _model_max_width = infinity;
     
-    var _model_max_height = _element.wrap_max_height - (_element.padding_t + _element.padding_b);
+    var _model_max_height = _element.__wrap_max_height - (_element.__padding_t + _element.__padding_b);
     if (_model_max_height < 0) _model_max_height = infinity;
     
     //TODO - Cache Bezier curves
     
     //Make a copy of the Bezier array
-    var _element_bezier_array = _element.bezier_array;
+    var _element_bezier_array = _element.__bezier_array;
     var _bezier_do = ((_element_bezier_array[0] != _element_bezier_array[4]) || (_element_bezier_array[1] != _element_bezier_array[5]));
     if (_bezier_do)
     {
@@ -57,13 +57,13 @@ function __scribble_gen_1_model_limits_and_bezier_curves()
         if (_model_max_width >= 0) __scribble_trace("Warning! Maximum width set by scribble_set_wrap() (" + string(_model_max_width) + ") has been replaced with Bezier curve length (" + string(_dist) + "). Use -1 as the maximum width to turn off this warning");
         _model_max_width = _dist;
         
-        global.__scribble_generator_state.bezier_lengths_array = _bezier_lengths;
+        global.__scribble_generator_state.__bezier_lengths_array = _bezier_lengths;
     }
     
     //Set up line height limits
-    var _element = global.__scribble_generator_state.element;
-    var _line_height_min = _element.line_height_min;
-    var _line_height_max = _element.line_height_max;
+    var _element = global.__scribble_generator_state.__element;
+    var _line_height_min = _element.__line_height_min;
+    var _line_height_max = _element.__line_height_max;
     
     if (_line_height_min < 0) _line_height_min = 1;
     if (_line_height_max < 0) _line_height_max = infinity;
@@ -98,13 +98,13 @@ function __scribble_gen_1_model_limits_and_bezier_curves()
     
     with(global.__scribble_generator_state)
     {
-        model_max_width  = _model_max_width;
-        model_max_height = _model_max_height;
+        __model_max_width  = _model_max_width;
+        __model_max_height = _model_max_height;
         
-        line_height_min = _line_height_min;
-        line_height_max = _line_height_max;
+        __line_height_min = _line_height_min;
+        __line_height_max = _line_height_max;
         
-        line_spacing_add      = _line_spacing_add;
-        line_spacing_multiply = _line_spacing_multiply;
+        __line_spacing_add      = _line_spacing_add;
+        __line_spacing_multiply = _line_spacing_multiply;
     }
 }

@@ -2,7 +2,7 @@ normXscale = image_xscale;
 normYscale = image_yscale;
 wavedraw = false;
 text = "notset";
-//test
+
 if room = rUnitConvert {
     if id = inst_62D335F6.id {
         text = "0";

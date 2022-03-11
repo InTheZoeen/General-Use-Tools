@@ -7,7 +7,8 @@ if global.audToggle = false {
 global.answer = 0;
 global.answerPut = false;
 
-scribble_font_bake_outline("ThaleahFat","ThaleahFatOutline",4,);
+scribble_font_bake_outline_8dir("ThaleahFat","ggsad",c_black,false);
+scribble_font_bake_outline_8dir("ggsad","ThaleahFatOutline",c_black,false);
 
 global.convertType = "Temperature"; //type of conversion (temperature, length, mass, etc)
 global.convertSelected = "notset"; //selected box (used for checking what value to modifiy)

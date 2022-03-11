@@ -65,11 +65,9 @@ if position_meeting(mouse_x,mouse_y,id) {
 				room_goto(rHub);
 			}
 			if id = inst_74B55D2D.id {
-				window_set_size(640,720);
 				room_goto(rCalculator);
 			}
 			if id = inst_250A204E.id {
-				window_set_size(640,720);
 				room_goto(rUnitConvert);
 			}
 		}

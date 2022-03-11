@@ -5,7 +5,6 @@ if position_meeting(mouse_x,mouse_y,id) {
 	
 	if mouse_check_button_pressed(mb_left) {
 		if text = "QUIT" {
-			window_set_size(960,960);
 			room_goto(rTools);
 		}
 		else {
