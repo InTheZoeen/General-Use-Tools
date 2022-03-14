@@ -69,7 +69,7 @@ if position_meeting(mouse_x,mouse_y,id) {
 			}
 		}
 		if global.currentvalue = "numVal1" {
-			if string_length(string(global.numVal1)) <= 8 {
+			if string_length(string(global.numVal1)) <= 6 {
 				if global.numStart = false && (text = "1") || (text = "2") || (text = "3") || (text = "4") || (text = "5") || (text = "6") || (text = "7") || (text = "8") || (text = "9") || (text = "0") || (text = "+") || (text = "-") || (text = "x") || (text = "/") {
 					global.numStart = true;
 				}
@@ -122,7 +122,7 @@ if position_meeting(mouse_x,mouse_y,id) {
 		}
 		
 		if global.currentvalue = "numVal2" {
-			if string_length(string(global.numVal2)) <= 8 {
+			if string_length(string(global.numVal2)) <= 6 {
 				if global.drawNumVal2 = false && (text = "1") || (text = "2") || (text = "3") || (text = "4") || (text = "5") || (text = "6") || (text = "7") || (text = "8") || (text = "9") || (text = "0") || (text = "ANS") {
 					global.drawNumVal2 = true;
 				}
