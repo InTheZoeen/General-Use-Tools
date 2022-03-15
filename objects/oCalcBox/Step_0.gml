@@ -69,7 +69,40 @@ if position_meeting(mouse_x,mouse_y,id) {
 			}
 		}
 		if global.currentvalue = "numVal1" {
-			if string_length(string(global.numVal1)) <= 6 {
+			#region "delete val 1"
+			if (text = "DEL") {
+				if global.numVal1DecCheck = false {
+					global.numVal1 /= 10;
+					global.numVal1 = int64(global.numVal1);
+					if global.numVal1 = 0 {
+						global.valLength1 = 0;
+						global.numStart = false;
+					}
+				}
+				else {
+					if global.charge = "+" {
+						if 0 = global.numVal1decPlace {
+							global.numVal1dec = max(global.numVal1dec - 1,0);
+							global.numVal1DecCheck = false;
+						}
+						else {
+							global.numVal1decPlace -= 1;
+							if 0 = global.numVal1decPlace {
+								global.numVal1 = floor(global.numVal1);
+								global.numVal1DecCheck = false;
+							}
+						}
+						global.numVal1dec = global.numVal1 - floor(global.numVal1);
+						global.numVal1 = floor(global.numVal1) +  round_ext(global.numVal1dec, 1 / power(10,global.numVal1decPlace));
+						
+					}
+					else {
+					
+					}
+				}
+			}
+			#endregion
+			if global.valLength1 <= 6 {
 				if global.numStart = false && (text = "1") || (text = "2") || (text = "3") || (text = "4") || (text = "5") || (text = "6") || (text = "7") || (text = "8") || (text = "9") || (text = "0") || (text = "+") || (text = "-") || (text = "x") || (text = "/") {
 					global.numStart = true;
 				}
@@ -82,6 +115,7 @@ if position_meeting(mouse_x,mouse_y,id) {
 						else {
 							global.numVal1 -= real(text);
 						}
+						global.valLength1 += 1;
 					}
 					else {
 						if global.charge = "+" {
@@ -95,30 +129,7 @@ if position_meeting(mouse_x,mouse_y,id) {
 				}
 				if (text = "0") {
 					global.numVal1 *= 10;
-				}
-			}
-			if (text = "DEL") {
-				if global.numVal1DecCheck = false {
-					global.numVal1 /= 10;
-					global.numVal1 = int64(global.numVal1);
-					if global.numVal1 = 0 {
-						global.numStart = false;
-					}
-				}
-				else {
-					if global.charge = "+" {
-						global.numVal1dec = global.numVal1 - floor(global.numVal1);
-						global.numVal1 = floor(global.numVal1) +  round_ext(global.numVal1dec, 1 / ((10 * global.numVal1decPlace) - 1));
-						if global.numVal1 = floor(global.numVal1) {
-							global.numVal1DecCheck = false;
-						}
-						if global.numVal1 = 0 {
-							global.numStart = false;
-						}
-					}
-					else {
-					
-					}
+					global.valLength1 += 1;
 				}
 			}
 			if (text = "+/-") {
