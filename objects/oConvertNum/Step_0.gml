@@ -4,7 +4,6 @@ if position_meeting(mouse_x,mouse_y,id) {
     wavedraw = true;
 	
 	if mouse_check_button_pressed(mb_left) {
-		audio_play_sound(aClick,1,false);
 		if text = "QUIT" {
 			room_goto(rTools);
 		}
@@ -32,31 +31,29 @@ if position_meeting(mouse_x,mouse_y,id) {
 					}
 				}
 				else {
-					if string_length(string(global.convertBoxOneValue)) <= 6 {
-						if text != "0" {
-							if global.convertBoxOneValue = 0 {
-								if global.convertBoxOneCharge = "+" {
-									global.convertBoxOneValue += real(text);
-								}
-								else {
-									global.convertBoxOneValue -= real(text);
-								}
+					if text != "0" {
+						if global.convertBoxOneValue = 0 {
+							if global.convertBoxOneCharge = "+" {
+								global.convertBoxOneValue += real(text);
 							}
 							else {
-								if global.convertBoxOneCharge = "+" {
-									global.convertBoxOneValue *= 10;
-									global.convertBoxOneValue += real(text);
-								}
-								else {
-									global.convertBoxOneValue *= 10;
-									global.convertBoxOneValue -= real(text);
-								}
+								global.convertBoxOneValue -= real(text);
 							}
-						
 						}
 						else {
-							global.convertBoxOneValue *= 10;
+							if global.convertBoxOneCharge = "+" {
+								global.convertBoxOneValue *= 10;
+								global.convertBoxOneValue += real(text);
+							}
+							else {
+								global.convertBoxOneValue *= 10;
+								global.convertBoxOneValue -= real(text);
+							}
 						}
+						
+					}
+					else {
+						global.convertBoxOneValue *= 10;
 					}
 				}
 			}
@@ -82,31 +79,29 @@ if position_meeting(mouse_x,mouse_y,id) {
 					}
 				}
 				else {
-					if string_length(string(global.convertBoxTwoValue)) <= 6 {
-						if text != "0" {
-							if global.convertBoxTwoValue = 0 {
-								if global.convertBoxTwoCharge = "+" {
-									global.convertBoxTwoValue += real(text);
-								}
-								else {
-									global.convertBoxTwoValue -= real(text);
-								}
+					if text != "0" {
+						if global.convertBoxTwoValue = 0 {
+							if global.convertBoxTwoCharge = "+" {
+								global.convertBoxTwoValue += real(text);
 							}
 							else {
-								if global.convertBoxTwoCharge = "+" {
-									global.convertBoxTwoValue *= 10;
-									global.convertBoxTwoValue += real(text);
-								}
-								else {
-									global.convertBoxTwoValue *= 10;
-									global.convertBoxTwoValue -= real(text);
-								}
+								global.convertBoxTwoValue -= real(text);
 							}
-						
 						}
 						else {
-							global.convertBoxTwoValue *= 10;
+							if global.convertBoxTwoCharge = "+" {
+								global.convertBoxTwoValue *= 10;
+								global.convertBoxTwoValue += real(text);
+							}
+							else {
+								global.convertBoxTwoValue *= 10;
+								global.convertBoxTwoValue -= real(text);
+							}
 						}
+						
+					}
+					else {
+						global.convertBoxTwoValue *= 10;
 					}
 				}
 			}
