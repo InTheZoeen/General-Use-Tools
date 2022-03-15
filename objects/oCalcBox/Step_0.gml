@@ -69,71 +69,28 @@ if position_meeting(mouse_x,mouse_y,id) {
 			}
 		}
 		if global.currentvalue = "numVal1" {
-<<<<<<< HEAD
-			#region "delete val 1"
-			if (text = "DEL") {
-				if global.numVal1DecCheck = false {
-					global.numVal1 /= 10;
-					global.numVal1 = int64(global.numVal1);
-					if global.numVal1 = 0 {
-						global.valLength1 = 0;
-						global.numStart = false;
-					}
-				}
-				else {
-					if global.charge = "+" {
-						if 0 = global.numVal1decPlace {
-							global.numVal1dec = max(global.numVal1dec - 1,0);
-							global.numVal1DecCheck = false;
-						}
-						else {
-							global.numVal1decPlace -= 1;
-							if 0 = global.numVal1decPlace {
-								global.numVal1 = floor(global.numVal1);
-								global.numVal1DecCheck = false;
-							}
-						}
-						global.numVal1dec = global.numVal1 - floor(global.numVal1);
-						global.numVal1 = floor(global.numVal1) +  round_ext(global.numVal1dec, 1 / power(10,global.numVal1decPlace));
-						
-					}
-					else {
-					
-					}
-				}
-			}
-			#endregion
-			if global.valLength1 <= 6 {
-=======
-			if string_length(string(global.numVal1)) <= 8 {
->>>>>>> parent of 237e708 (added decimal function)
+			if string_length(string(global.numVal1)) <= 6 {
 				if global.numStart = false && (text = "1") || (text = "2") || (text = "3") || (text = "4") || (text = "5") || (text = "6") || (text = "7") || (text = "8") || (text = "9") || (text = "0") || (text = "+") || (text = "-") || (text = "x") || (text = "/") {
 					global.numStart = true;
 				}
 				if (text = "1") || (text = "2") || (text = "3") || (text = "4") || (text = "5") || (text = "6") || (text = "7") || (text = "8") || (text = "9") {
-					if global.numVal1DecCheck = false {
-						global.numVal1 *= 10;
-						if global.charge = "+" {
-							global.numVal1 += real(text);
-						}
-						else {
-							global.numVal1 -= real(text);
-						}
-						global.valLength1 += 1;
+					global.numVal1 *= 10;
+					if global.charge = "+" {
+						global.numVal1 += real(text);
 					}
 					else {
-						if global.charge = "+" {
-							global.numVal1 += (real(text) / power(10,global.numVal1decPlace));	
-						}
-						else {
-							global.numVal1 -= (real(text) / power(10,global.numVal1decPlace));
-						}
-						global.numVal1decPlace += 1;
+						global.numVal1 -= real(text);
 					}
 				}
 				if (text = "0") {
 					global.numVal1 *= 10;
-					global.valLength1 += 1;
+				}
+			}
+			if (text = "DEL") {
+				global.numVal1 /= 10;
+				global.numVal1 = int64(global.numVal1);
+				if global.numVal1 = 0 {
+					global.numStart = false;
 				}
 			}
 			if (text = "+/-") {
@@ -151,10 +108,7 @@ if position_meeting(mouse_x,mouse_y,id) {
 					global.currentvalue = "numVal2";
 				}
 			}
-			if text = "." {
-				global.numVal1DecCheck = true;
-				audio_play_sound(aDelete,1,false);
-			}
+			
 			if (text = "ANS") && global.answerPut = true {
 				global.numVal1 = global.answer;
 				global.numStart = true;
@@ -168,7 +122,7 @@ if position_meeting(mouse_x,mouse_y,id) {
 		}
 		
 		if global.currentvalue = "numVal2" {
-			if string_length(string(global.numVal2)) <= 8 {
+			if string_length(string(global.numVal2)) <= 6 {
 				if global.drawNumVal2 = false && (text = "1") || (text = "2") || (text = "3") || (text = "4") || (text = "5") || (text = "6") || (text = "7") || (text = "8") || (text = "9") || (text = "0") || (text = "ANS") {
 					global.drawNumVal2 = true;
 				}
