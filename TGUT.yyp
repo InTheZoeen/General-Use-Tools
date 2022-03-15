@@ -97,6 +97,7 @@
     {"id":{"name":"scribble_anim_wobble","path":"scripts/scribble_anim_wobble/scribble_anim_wobble.yy",},"order":9,},
     {"id":{"name":"scribble_typewriter_add_event","path":"scripts/scribble_typewriter_add_event/scribble_typewriter_add_event.yy",},"order":7,},
     {"id":{"name":"scribble_super_glyph_copy_all","path":"scripts/scribble_super_glyph_copy_all/scribble_super_glyph_copy_all.yy",},"order":3,},
+    {"id":{"name":"round_ext","path":"scripts/round_ext/round_ext.yy",},"order":1,},
     {"id":{"name":"__scribble_gen_2_parser","path":"scripts/__scribble_gen_2_parser/__scribble_gen_2_parser.yy",},"order":2,},
     {"id":{"name":"__scribble_config_behaviours","path":"scripts/__scribble_config_behaviours/__scribble_config_behaviours.yy",},"order":0,},
     {"id":{"name":"scribble_anim_wave","path":"scripts/scribble_anim_wave/scribble_anim_wave.yy",},"order":7,},

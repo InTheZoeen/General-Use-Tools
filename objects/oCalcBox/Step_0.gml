@@ -74,12 +74,23 @@ if position_meeting(mouse_x,mouse_y,id) {
 					global.numStart = true;
 				}
 				if (text = "1") || (text = "2") || (text = "3") || (text = "4") || (text = "5") || (text = "6") || (text = "7") || (text = "8") || (text = "9") {
-					global.numVal1 *= 10;
-					if global.charge = "+" {
-						global.numVal1 += real(text);
+					if global.numVal1DecCheck = false {
+						global.numVal1 *= 10;
+						if global.charge = "+" {
+							global.numVal1 += real(text);
+						}
+						else {
+							global.numVal1 -= real(text);
+						}
 					}
 					else {
-						global.numVal1 -= real(text);
+						if global.charge = "+" {
+							global.numVal1 += (real(text) / power(10,global.numVal1decPlace));	
+						}
+						else {
+							global.numVal1 -= (real(text) / power(10,global.numVal1decPlace));
+						}
+						global.numVal1decPlace += 1;
 					}
 				}
 				if (text = "0") {
@@ -87,10 +98,27 @@ if position_meeting(mouse_x,mouse_y,id) {
 				}
 			}
 			if (text = "DEL") {
-				global.numVal1 /= 10;
-				global.numVal1 = int64(global.numVal1);
-				if global.numVal1 = 0 {
-					global.numStart = false;
+				if global.numVal1DecCheck = false {
+					global.numVal1 /= 10;
+					global.numVal1 = int64(global.numVal1);
+					if global.numVal1 = 0 {
+						global.numStart = false;
+					}
+				}
+				else {
+					if global.charge = "+" {
+						global.numVal1dec = global.numVal1 - floor(global.numVal1);
+						global.numVal1 = floor(global.numVal1) +  round_ext(global.numVal1dec, 1 / ((10 * global.numVal1decPlace) - 1));
+						if global.numVal1 = floor(global.numVal1) {
+							global.numVal1DecCheck = false;
+						}
+						if global.numVal1 = 0 {
+							global.numStart = false;
+						}
+					}
+					else {
+					
+					}
 				}
 			}
 			if (text = "+/-") {
@@ -108,7 +136,10 @@ if position_meeting(mouse_x,mouse_y,id) {
 					global.currentvalue = "numVal2";
 				}
 			}
-			
+			if text = "." {
+				global.numVal1DecCheck = true;
+				audio_play_sound(aDelete,1,false);
+			}
 			if (text = "ANS") && global.answerPut = true {
 				global.numVal1 = global.answer;
 				global.numStart = true;

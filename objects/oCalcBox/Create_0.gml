@@ -4,10 +4,16 @@ wavedraw = false;
 text = "notset";
 global.numStart = false;
 global.numVal1 = 0;
+global.numVal1dec = 0;
+global.numVal1decPlace = 1;
+global.numVal1DecCheck = false;
 global.currentvalue = "numVal1";
 global.modifier = 0;
 global.charge = "+";
 global.numVal2 = 0;
+global.numVal2dec = 0;
+global.numVal2decPlace = 1;
+global.numVal2DecCheck = false;
 global.drawNumVal2 = false;
 
 if room = rCalculator {
@@ -89,5 +95,9 @@ if room = rCalculator {
 	else 
 	if id = inst_122FB7CB.id{
 		text = "QUIT";
+	}
+	else
+	if id = inst_37D1B045.id {
+		text = ".";
 	}
 }
