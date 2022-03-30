@@ -20,6 +20,9 @@ if room = rTools {
 	if id = inst_250A204E.id {
 		text = "Unit Converter";
 	}
+	if id = inst_7B2D7392.id {
+		text = "Timer";
+	}
 }
 
 if room = rOptions {
@@ -69,6 +72,9 @@ if position_meeting(mouse_x,mouse_y,id) {
 			}
 			if id = inst_250A204E.id {
 				room_goto(rUnitConvert);
+			}
+			if id = inst_7B2D7392.id {
+				room_goto(rTimer);
 			}
 		}
 		if room = rOptions {
