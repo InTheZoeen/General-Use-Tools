@@ -1,5 +1,5 @@
 draw_circle_color(room_width/2,room_height/2 + timerYoffset,timerOuterSize/2,make_color_rgb(25,25,25),make_color_rgb(25,25,25),false);
-draw_pi(room_width/2 - (timerSize / 2),(room_height/2 + timerYoffset) - (timerSize / 2),room_width/2 + (timerSize / 2),(room_height/2 + timerYoffset) + (timerSize / 2),room_width/2,room_height/2,mouse_x,mouse_y,make_color_rgb(109,208,247),false,0,360);
+draw_pi(room_width/2 - (timerSize / 2),(room_height/2 + timerYoffset) - (timerSize / 2),room_width/2 + (timerSize / 2),(room_height/2 + timerYoffset) + (timerSize / 2),room_width/2,room_height/2,room_width/2 + lengthdir_x(100,(global.timerPercent) - 90),room_height/2 + lengthdir_y(100,(global.timerPercent) - 90),make_color_rgb(109,208,247),false,0,360);
 //draw_circle_color(room_width/2,room_height/2 + timerYoffset,timerInnerSize/2,make_color_rgb(25,25,25),make_color_rgb(25,25,25),false);
 draw_circle_color(room_width/2,room_height/2 + timerYoffset,timerInnerSize/2,make_color_rgb(20,20,20),make_color_rgb(20,20,20),false);
 draw_circle_color(room_width/2,room_height/2 + timerYoffset,timerInnerSize2/2,make_color_rgb(25,25,25),make_color_rgb(25,25,25),false);
@@ -12,7 +12,7 @@ if secondsDraw < 10 {
 	secondsDraw = "0" + string(secondsDraw);
 }
 else {
-	secondsDraw = string(seconds);
+	secondsDraw = string(floor(seconds));
 }
 var hours = global.timerTime;
 var hoursDraw = 0;

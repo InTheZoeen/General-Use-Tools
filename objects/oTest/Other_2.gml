@@ -19,3 +19,6 @@ global.convertBoxTwoValue = 0; //number value of the second box
 global.convertBoxOneCharge = "+"; //what the charge of the first value is (positive or negative)
 global.convertBoxTwoCharge = "+"; //what the charge of the second value is (positive or negative)
 global.timerTime = 3600 * 5;
+global.timerStartTime = global.timerTime;
+global.timerPercent = 1;
+global.timerPercentDifference = 0;

@@ -43,6 +43,10 @@ function draw_pi(x1,y1,x2,y2,x3,y3,x4,y4,color,outline,startDir,precision) {
     else r = 0;
     a1 = point_direction(0,0,(x3-xm)*r,y3-ym) + startDir;
     a2 = point_direction(0,0,(x4-xm)*r,y4-ym);
+	while (a1 > 360) a1 -= 360;
+	while (a1 < 0) a1 += 360;
+	while (a2 > 360) a2 -= 360;
+	while (a1 < 0) a2 += 360;
     if (a2<a1) a2 += 360;
     if (outline = true) draw_primitive_begin(pr_linestrip);
     else draw_primitive_begin(pr_trianglefan);
