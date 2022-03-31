@@ -70,6 +70,7 @@
     {"id":{"name":"rLogo","path":"rooms/rLogo/rLogo.yy",},"order":5,},
     {"id":{"name":"scribble_font_bake_outline_4dir","path":"scripts/scribble_font_bake_outline_4dir/scribble_font_bake_outline_4dir.yy",},"order":0,},
     {"id":{"name":"scribble_is_text_element","path":"scripts/scribble_is_text_element/scribble_is_text_element.yy",},"order":6,},
+    {"id":{"name":"oTimerButton","path":"objects/oTimerButton/oTimerButton.yy",},"order":10,},
     {"id":{"name":"__shd_scribble_bake_shadow","path":"shaders/__shd_scribble_bake_shadow/__shd_scribble_bake_shadow.yy",},"order":4,},
     {"id":{"name":"scribble_msdf_thickness_offset","path":"scripts/scribble_msdf_thickness_offset/scribble_msdf_thickness_offset.yy",},"order":7,},
     {"id":{"name":"oConvertNum","path":"objects/oConvertNum/oConvertNum.yy",},"order":8,},
