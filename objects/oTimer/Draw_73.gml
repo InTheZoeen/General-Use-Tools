@@ -4,4 +4,11 @@ var seconds = global.timerTime;
 while seconds >= 60 {
 	seconds -= 60;
 }
-scribble("[scale,2.5][fa_center][fa_middle][#FFFFFF][ThaleahFatOutline]" + string(floor(global.timerTime / 60)) + ":" + string_format(seconds,2,0)).draw((room_width/2) + 1,(room_height/2)+timerYoffset);
+var secondsDraw = seconds;
+if secondsDraw < 10 {
+	secondsDraw = "0" + string(seconds);
+}
+else {
+	secondsDraw = string(seconds);
+}
+scribble("[scale,2.5][fa_center][fa_middle][#FFFFFF][ThaleahFatOutline]" + string(floor(global.timerTime / 60)) + ":" + secondsDraw).draw((room_width/2) + 1,(room_height/2)+timerYoffset);

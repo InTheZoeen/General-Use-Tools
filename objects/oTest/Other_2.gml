@@ -18,4 +18,4 @@ global.convertBoxTwoType = ""; //what unit type box two is (Celsius, Kelvin, Met
 global.convertBoxTwoValue = 0; //number value of the second box
 global.convertBoxOneCharge = "+"; //what the charge of the first value is (positive or negative)
 global.convertBoxTwoCharge = "+"; //what the charge of the second value is (positive or negative)
-global.timerTime = 123;
+global.timerTime = 133;

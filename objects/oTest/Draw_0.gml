@@ -1,6 +1,37 @@
 scribble_anim_wheel(5,.5,.2);
 if room = rHub {
-	scribble("[scale,3.0][ThaleahFatOutline][fa_center][#fff165][wheel]Welcome!").draw(x, y);
+	scribble("[scale,3.0][ThaleahFatOutline][fa_center][#fff165][wheel]Welcome!").draw(x, y - 60);
+	var pmOrAm;
+	var drawCurrentHour = current_hour;
+	if current_hour >= 12 {
+		pmOrAm = "PM";
+		if current_hour != 12 {
+			drawCurrentHour -= 12;
+		}
+	}
+	else {
+		if drawCurrentHour = 0 {
+			drawCurrentHour += 12;
+		}
+		pmOrAm = "AM";
+	}
+	var monthAbv = "";
+	if true {
+		if (current_month = 1) monthAbv = "Jan";
+		if (current_month = 2) monthAbv = "Feb";
+		if (current_month = 3) monthAbv = "Mar";
+		if (current_month = 4) monthAbv = "Apr";
+		if (current_month = 5) monthAbv = "May";
+		if (current_month = 6) monthAbv = "Jun";
+		if (current_month = 7) monthAbv = "Jul";
+		if (current_month = 8) monthAbv = "Aug";
+		if (current_month = 9) monthAbv = "Sep";
+		if (current_month = 10) monthAbv = "Oct";
+		if (current_month = 11) monthAbv = "Nov";
+		if (current_month = 12) monthAbv = "Dec";
+	}
+	scribble("[scale,2.0][ThaleahFatOutline][fa_center][#ffffff][wave]" + string(drawCurrentHour) + ":" + string(current_minute) + " " + string(pmOrAm)).draw(x, y + 25);
+	scribble("[scale,2.0][ThaleahFatOutline][fa_center][#ffffff][wave]" + monthAbv + " " + string(current_day) + " " + string(current_year)).draw(x, y + 75);
 }
 if room = rCalculator {
 	if global.numStart = true {

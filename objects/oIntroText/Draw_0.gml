@@ -7,7 +7,7 @@ if room = rLogo {
 	}
 }
 if room = rTools {
-	scribble("[scale,3.0][fa_center][fa_middle][#FFFFFF][ThaleahFatOutline]"+ text).draw(x,y);
+	scribble("[scale,3.0][fa_center][fa_middle][#FFFFFF][ThaleahFatOutline][wave]"+ text).draw(x,y);
 }
 if room = rOptions {
 	if text = "Play sounds" {
