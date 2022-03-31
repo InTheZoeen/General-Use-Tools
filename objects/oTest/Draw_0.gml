@@ -30,7 +30,14 @@ if room = rHub {
 		if (current_month = 11) monthAbv = "Nov";
 		if (current_month = 12) monthAbv = "Dec";
 	}
-	scribble("[scale,2.0][ThaleahFatOutline][fa_center][#ffffff][wave]" + string(drawCurrentHour) + ":" + string(current_minute) + " " + string(pmOrAm)).draw(x, y + 25);
+	var curMin = current_minute;
+	if curMin < 10 {
+		curMin = "0" + string(curMin);
+	}
+	else {
+		curMin = string(curMin);
+	}
+	scribble("[scale,2.0][ThaleahFatOutline][fa_center][#ffffff][wave]" + string(drawCurrentHour) + ":" + curMin + " " + string(pmOrAm)).draw(x, y + 25);
 	scribble("[scale,2.0][ThaleahFatOutline][fa_center][#ffffff][wave]" + monthAbv + " " + string(current_day) + " " + string(current_year)).draw(x, y + 75);
 }
 if room = rCalculator {

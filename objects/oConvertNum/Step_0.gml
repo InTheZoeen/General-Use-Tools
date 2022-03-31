@@ -142,13 +142,13 @@ if global.convertType = "Temperature" {
 	else {
 		//converting to base
 		var base = global.convertBoxTwoValue;
-		if global.convertBoxOneType = "Fahrenheit" {
+		if global.convertBoxTwoType = "Fahrenheit" {
 			base = (((global.convertBoxTwoValue - 32)/ 9) * 5);
 		}
 		if global.convertBoxTwoType = "Kelvin" {
 			base -= 273.15;
 		}
-		//converting to val 1
+		//converting to val 2
 		if global.convertBoxOneType = "Fahrenheit" {
 			base = (((base / 5) * 9) + 32);
 		}

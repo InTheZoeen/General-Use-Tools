@@ -9,7 +9,7 @@ layTime = layer_get_id("timeButtons");
 layMass = layer_get_id("massButtons");
 layVol = layer_get_id("volButtons");
 
-//instance_deactivate_layer(layTemp);
+instance_activate_layer(layTemp);
 instance_deactivate_layer(layLen);
 instance_deactivate_layer(layTime);
 instance_deactivate_layer(layMass);
