@@ -1,5 +1,6 @@
 ini_open("settings.ini");
 global.audToggle = ini_read_real("toggles","audToggle",true);
+global.globalTimer = ini_read_real("toggles","globalTimer",true);
 ini_close();
 if global.audToggle = false {
 	audio_master_gain(0);
@@ -18,6 +19,13 @@ global.convertBoxTwoType = ""; //what unit type box two is (Celsius, Kelvin, Met
 global.convertBoxTwoValue = 0; //number value of the second box
 global.convertBoxOneCharge = "+"; //what the charge of the first value is (positive or negative)
 global.convertBoxTwoCharge = "+"; //what the charge of the second value is (positive or negative)
+
 global.timerPause = false;
-global.timerTime = 30;
+global.timerTime = 0;
 global.timerStartTime = global.timerTime;
+global.timerInputSelect = "seconds";
+global.timerSetSeconds = 0;
+global.timerSetMinutes = 0;
+global.timerSetHours = 0;
+
+global.timerDraw = "";

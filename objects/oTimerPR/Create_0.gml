@@ -21,6 +21,9 @@ if id = inst_1661655C.id {
 		text = "Pause";
 	}
 }
+if id = inst_11A2C002.id {
+	text = "Quit";
+}
 if id = inst_7C15F958.id {
 	text = "Hours";
 }

@@ -57,5 +57,35 @@ else {
 		drawMins = string(drawMins) + ":";
 	}
 }
+
+var curSeconds = global.timerSetSeconds;
+if curSeconds >= 10 {
+	var drawCurSeconds = ":" + string(curSeconds);
+}
+else {
+	var drawCurSeconds = ":0" + string(curSeconds);
+}
+
+var curMinutes = global.timerSetMinutes;
+if curMinutes >= 10 {
+	var drawCurMinutes = ":" + string(curMinutes);
+}
+else {
+	var drawCurMinutes = ":0" + string(curMinutes);
+}
+
+var curHours = global.timerSetHours;
+if curHours >= 10 {
+	var drawCurHours = string(curHours);
+}
+else {
+	var drawCurHours = "0" + string(curHours);
+}
+global.timerDraw = drawActualHours + drawMins + secondsDraw;
 //draw_rectangle_color((room_width/2) + 1 - 130,(room_height/2)+timerYoffset - 44,(room_width/2) + 1 + 130,(room_height/2)+timerYoffset + 44,c_red,c_red,c_red,c_red,true);
-scribble("[scale,2.5][fa_center][fa_middle][#FFFFFF][ThaleahFatOutline]" + drawActualHours + drawMins + secondsDraw).fit_to_box(260,88,false).draw((room_width/2) + 1,(room_height/2)+timerYoffset + 8);
+if global.timerTime > 0 {
+	scribble("[scale,2.5][fa_center][fa_middle][#FFFFFF][ThaleahFatOutline]" + drawActualHours + drawMins + secondsDraw).fit_to_box(260,88,false).draw((room_width/2) + 1,(room_height/2)+timerYoffset + 8);
+}
+else {
+	scribble("[scale,2.5][fa_center][fa_middle][#FFFFFF][ThaleahFatOutline]" + drawCurHours + drawCurMinutes + drawCurSeconds).fit_to_box(260,88,false).draw((room_width/2) + 1,(room_height/2)+timerYoffset + 8);
+}

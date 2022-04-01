@@ -14,6 +14,9 @@ if room = rOptions {
 	if id = inst_3F880CDD.id {
 		text = "Play sounds";
 	}
+	if id = inst_3874859.id {
+		text = "Show global timer";
+	}
 }
 if room = rTools {
 	if id = inst_250D52C8.id {
