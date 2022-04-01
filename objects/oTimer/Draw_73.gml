@@ -81,7 +81,6 @@ if curHours >= 10 {
 else {
 	var drawCurHours = "0" + string(curHours);
 }
-global.timerDraw = drawActualHours + drawMins + secondsDraw;
 //draw_rectangle_color((room_width/2) + 1 - 130,(room_height/2)+timerYoffset - 44,(room_width/2) + 1 + 130,(room_height/2)+timerYoffset + 44,c_red,c_red,c_red,c_red,true);
 if global.timerTime > 0 {
 	scribble("[scale,2.5][fa_center][fa_middle][#FFFFFF][ThaleahFatOutline]" + drawActualHours + drawMins + secondsDraw).fit_to_box(260,88,false).draw((room_width/2) + 1,(room_height/2)+timerYoffset + 8);

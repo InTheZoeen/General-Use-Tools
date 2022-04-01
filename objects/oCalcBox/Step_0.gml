@@ -212,3 +212,14 @@ else {
 	image_yscale = lerp(image_yscale,normYscale,.3);
 	wavedraw = false;
 }
+
+if text = "9" || text = "=" {
+	if global.timerTime > 0 && global.globalTimer = true {
+		self.image_yscale = 1.1875;
+		self.y = 614;
+	}
+	else {
+		self.image_yscale = 2;
+		self.y = 640;
+	}
+}
