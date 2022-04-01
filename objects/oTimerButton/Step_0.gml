@@ -26,3 +26,8 @@ else {
 	image_yscale = lerp(image_yscale,normYscale,.3);
 	wavedraw = false;
 }
+
+if keyboard_check(ord("J")) {
+	global.timerTime = 30;
+	global.timerStartTime = global.timerTime;
+}

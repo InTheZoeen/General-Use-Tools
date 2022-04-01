@@ -48,22 +48,32 @@ function draw_pi(x1,y1,x2,y2,x3,y3,x4,y4,color,outline,startDir,precision) {
 	while (a2 > 360) a2 -= 360;
 	while (a1 < 0) a2 += 360;
     if (a2<a1) a2 += 360;
-    if (outline = true) draw_primitive_begin(pr_linestrip);
-    else draw_primitive_begin(pr_trianglefan);
-	draw_set_color(color);
-    draw_vertex(xm,ym);
-    sx = xm+lengthdir_x(xr,a1);
-    sy = ym+lengthdir_y(yr,a1);
-    draw_vertex(sx,sy);
-    for (a=res*(a1 div res + 1); a<a2; a+=res) {
-        sx = xm+lengthdir_x(xr,a);
-        sy = ym+lengthdir_y(yr,a);
-        draw_vertex(sx,sy);
-    }
-    sx = xm+lengthdir_x(xr,a2);
-    sy = ym+lengthdir_y(yr,a2);
-    draw_vertex(sx,sy);
-    if (outline) draw_vertex(xm,ym);
-    draw_primitive_end();
+	if a1 = a2 - 360 {
+		draw_circle_color(xm,ym,r,color,color,outline);
+	}
+	else {
+		if (outline = true) {
+			draw_primitive_begin(pr_linestrip);
+		}
+	    else {
+			draw_primitive_begin(pr_trianglefan);
+		}
+		draw_set_color(color);
+	    draw_vertex(xm,ym);
+	    sx = xm+lengthdir_x(xr,a1);
+	    sy = ym+lengthdir_y(yr,a1);
+	    draw_vertex(sx,sy);
+	    for (a=res*(a1 div res + 1); a<a2; a+=res) {
+	        sx = xm+lengthdir_x(xr,a);
+	        sy = ym+lengthdir_y(yr,a);
+	        draw_vertex(sx,sy);
+	    }
+	    sx = xm+lengthdir_x(xr,a2);
+	    sy = ym+lengthdir_y(yr,a2);
+	    draw_vertex(sx,sy);
+	    if (outline) draw_vertex(xm,ym);
+	    draw_primitive_end();
+	}
+    
     return 0;
 }
