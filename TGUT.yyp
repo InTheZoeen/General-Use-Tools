@@ -72,6 +72,7 @@
     {"id":{"name":"rLogo","path":"rooms/rLogo/rLogo.yy",},"order":5,},
     {"id":{"name":"scribble_font_bake_outline_4dir","path":"scripts/scribble_font_bake_outline_4dir/scribble_font_bake_outline_4dir.yy",},"order":0,},
     {"id":{"name":"oGlobalTimer","path":"objects/oGlobalTimer/oGlobalTimer.yy",},"order":13,},
+    {"id":{"name":"aAlarm","path":"sounds/aAlarm/aAlarm.yy",},"order":0,},
     {"id":{"name":"scribble_is_text_element","path":"scripts/scribble_is_text_element/scribble_is_text_element.yy",},"order":6,},
     {"id":{"name":"oTimerButton","path":"objects/oTimerButton/oTimerButton.yy",},"order":10,},
     {"id":{"name":"__shd_scribble_bake_shadow","path":"shaders/__shd_scribble_bake_shadow/__shd_scribble_bake_shadow.yy",},"order":4,},
@@ -178,6 +179,7 @@
     {"folderPath":"folders/Scribble/Fonts.yy","order":4,"resourceVersion":"1.0","name":"Fonts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scribble/Miscellaneous.yy","order":5,"resourceVersion":"1.0","name":"Miscellaneous","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scribble/Superfonts.yy","order":6,"resourceVersion":"1.0","name":"Superfonts","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sounds/asTimer.yy","order":8,"resourceVersion":"1.0","name":"asTimer","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

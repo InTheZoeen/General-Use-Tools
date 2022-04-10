@@ -6,8 +6,8 @@ if position_meeting(mouse_x,mouse_y,id) {
 		show_debug_message(id);
 	}
 	if mouse_check_button_pressed(mb_left) {
-		audio_play_sound(aClick,1,false);
 		if id = inst_F7C0ABC.id && inst_F7C0ABC.visible = true {
+			audio_play_sound(aClick,1,false);
 			if text = "Start" {
 				global.timerTime = global.timerStartTime;
 				global.timerPause = false;
@@ -60,6 +60,10 @@ if position_meeting(mouse_x,mouse_y,id) {
 				inst_1661655C.text = "Pause";
 				inst_1661655C.visible = false;
 				text = "Start";
+				if global.timerSound = true {
+					audio_stop_sound(aAlarm);
+					global.timerSound = false;
+				}
 			}
 		}
 		if id = inst_1661655C.id && inst_1661655C.visible = true {
@@ -81,7 +85,7 @@ if position_meeting(mouse_x,mouse_y,id) {
 		if id = inst_57AEFF45.id && inst_57AEFF45.visible = true {
 			global.timerInputSelect = "seconds";
 		}
-		if id = inst_11A2C002.id {
+		if id = inst_11A2C002.id || id = inst_4D8EAF0F.id {
 			room_goto(rTools);
 		}
 	}
@@ -99,6 +103,11 @@ else {
 		inst_F7C0ABC.visible = true;
 	}
 	else {
-		inst_F7C0ABC.visible = false;
+		if global.timerSound = true {
+			inst_F7C0ABC.visible = true;
+		}
+		else {
+			inst_F7C0ABC.visible = false;
+		}
 	}
 }

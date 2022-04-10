@@ -27,3 +27,5 @@ global.timerInputSelect = "seconds";
 global.timerSetSeconds = 0;
 global.timerSetMinutes = 0;
 global.timerSetHours = 0;
+
+global.timerSound = false;

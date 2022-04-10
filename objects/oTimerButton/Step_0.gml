@@ -13,7 +13,7 @@ if position_meeting(mouse_x,mouse_y,id) {
 			layer_set_visible(layTimer,true);
 			instance_activate_layer(layTimer);
 		}
-		if text = "Clocks" {
+		if text = "Stopwatch" {
 			layer_set_visible(layTimer,false);
 			instance_deactivate_layer(layTimer);
 			layer_set_visible(layClock,true);

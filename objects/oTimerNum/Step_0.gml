@@ -67,25 +67,56 @@ else {
 }
 
 if global.timerTime = 0 && inst_zero.visible = false {
-	global.timerTime = 0;
-	global.timerStartTime = 0;
-	inst_7C15F958.visible = true;
-	inst_7BA05103.visible = true;
-	inst_57AEFF45.visible = true;
+	if global.audToggle = false {
+		global.timerTime = 0;
+		global.timerSound = false;
+		global.timerStartTime = 0;
+		inst_7C15F958.visible = true;
+		inst_7BA05103.visible = true;
+		inst_57AEFF45.visible = true;
 				
-	inst_zero.visible = true;
-	inst_one.visible = true;
-	inst_two.visible = true;
-	inst_three.visible = true;
-	inst_four.visible = true;
-	inst_five.visible = true;
-	inst_six.visible = true;
-	inst_seven.visible = true;
-	inst_eight.visible = true;
-	inst_nine.visible = true;
-	inst_delete.visible = true;
+		inst_zero.visible = true;
+		inst_one.visible = true;
+		inst_two.visible = true;
+		inst_three.visible = true;
+		inst_four.visible = true;
+		inst_five.visible = true;
+		inst_six.visible = true;
+		inst_seven.visible = true;
+		inst_eight.visible = true;
+		inst_nine.visible = true;
+		inst_delete.visible = true;
 				
+		inst_1661655C.visible = false;
+		inst_1661655C.text = "Pause";
+		inst_F7C0ABC.text = "Start";
+	}
+	else {
+		if global.timerSound = false {
+			audio_play_sound(aAlarm,5,true);
+			inst_1661655C.visible = false;
+			global.timerSound = true;
+		}
+	}
+}
+if global.timerSound = true && global.audToggle = true {
 	inst_1661655C.visible = false;
-	inst_1661655C.text = "Pause";
-	inst_F7C0ABC.text = "Start";
+				
+	inst_7C15F958.visible = false;
+	inst_7BA05103.visible = false;
+	inst_57AEFF45.visible = false;
+	
+	inst_zero.visible = false;
+	inst_one.visible = false;
+	inst_two.visible = false;
+	inst_three.visible = false;
+	inst_four.visible = false;
+	inst_five.visible = false;
+	inst_six.visible = false;
+	inst_seven.visible = false;
+	inst_eight.visible = false;
+	inst_nine.visible = false;
+	inst_delete.visible = false;
+	
+	inst_F7C0ABC.text = "End";
 }

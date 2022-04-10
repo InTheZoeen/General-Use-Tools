@@ -15,5 +15,5 @@ if id = inst_1C2EC6CD.id {
 	text = "Timer";
 }
 if id = inst_37B8C2DA.id {
-	text = "Clocks";
+	text = "Stopwatch";
 }

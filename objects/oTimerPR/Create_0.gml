@@ -43,3 +43,7 @@ else {
 	inst_7BA05103.visible = true;
 	inst_57AEFF45.visible = true;
 }
+
+if id = inst_4D8EAF0F.id {
+	text = "Quit";
+}
