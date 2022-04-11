@@ -22,7 +22,7 @@ if id = inst_1661655C.id {
 	}
 }
 if id = inst_11A2C002.id {
-	text = "Quit";
+	text = "Back";
 }
 if id = inst_7C15F958.id {
 	text = "Hours";
@@ -45,5 +45,5 @@ else {
 }
 
 if id = inst_4D8EAF0F.id {
-	text = "Quit";
+	text = "End";
 }

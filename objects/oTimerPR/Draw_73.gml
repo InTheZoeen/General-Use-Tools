@@ -1,4 +1,4 @@
-if text = "Seconds" {
+if text = "Seconds" || text = "Minutes" {
 	if wavedraw = true {
 		scribble("[scale,1.05][fa_center][fa_middle][#FFFFFF][ThaleahFat]"+ text).draw(x + 1,y + 2);
 	}

@@ -38,3 +38,30 @@ if room = rTimer {
         text = "DELETE";
     }
 }
+
+if global.timerTime > 0 {
+	inst_zero.visible = false;
+	inst_one.visible = false;
+	inst_two.visible = false;
+	inst_three.visible = false;
+	inst_four.visible = false;
+	inst_five.visible = false;
+	inst_six.visible = false;
+	inst_seven.visible = false;
+	inst_eight.visible = false;
+	inst_nine.visible = false;
+	inst_delete.visible = false;
+}
+else {
+	inst_zero.visible = true;
+	inst_one.visible = true;
+	inst_two.visible = true;
+	inst_three.visible = true;
+	inst_four.visible = true;
+	inst_five.visible = true;
+	inst_six.visible = true;
+	inst_seven.visible = true;
+	inst_eight.visible = true;
+	inst_nine.visible = true;
+	inst_delete.visible = true;
+}
